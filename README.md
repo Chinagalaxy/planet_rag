@@ -19,20 +19,20 @@
 PDF 文件 → MinerU API 解析 → 自动下载 MD + 图片 → Markdown 分块（基于markdown文件标题+递归分块）→ Qwen3?VL 图片描述（可选） → 嵌入 (bge?m3)→ 存入 Milvus 并构建混合检索器（关键字+向量）
 
 ## 💻 系统基础需求
-1、创建.env文件，填写以下内容：
+**1、创建.env文件，填写以下内容：**
 ```
 MINERU_API_KEY = your_mineru_api_key
 DEEPSEEK_API_KEY = your_deepseek_api_key
 DEEPSEEK_BASE_URL = https://api.deepseek.com
 MILVUS_TOKEN = your_milvus_token （第一次创建为默认token）
 ```
-2、下载本地模型，代码中使用文本嵌入模型bge-m3和视觉模型Qwen3VL-4B-Instruct，可选择其他模型进行替换。将模型下载到本文件夹下的models文件夹中。由于模型较大，请自行下载。
-3、准备领域内学术论文PDF数据，保存到当前文件夹下PDFs文件夹内，格式如（可从Zotero直接导出PDF文件）：
+**2、下载本地模型，代码中使用文本嵌入模型bge-m3和视觉模型Qwen3VL-4B-Instruct，可选择其他模型进行替换。将模型下载到本文件夹下的models文件夹中。**
+**3、准备领域内学术论文PDF数据，保存到当前文件夹下PDFs文件夹内，格式如（可从Zotero直接导出PDF文件）：**
 ```
 Cai et al. - 2025 - Persistent but weak magnetic field at the Moon’s midstage revealed by Chang’e-5 basalt.pdf
 Zhang et al. - 2020 - Asymmetric Lunar Magnetic Perturbations Produced by Reflected Solar Wind Particles.pdf
 ```
-4、根据requirements.txt安装依赖，建议使用conda环境。
+**4、根据requirements.txt安装依赖，建议使用conda环境。**
 ## 📂 文件架构
 ```
 planet_rag/
@@ -90,7 +90,7 @@ bge-m3嵌入模型加载完成
 ![月球全球性磁场图](images/7b141f5f7e67fc81e897cbbc281957f4a40f73ad27f3f356167bce60e5a5c399(1).jpg)
 
 ## 🧐 不足与展望
-1、MinerU解析PDF文件，仍会出现解析错误的情况，且在多张图片相连时不能正确划分图片，导致后续的图片描述只能使用原始图例+图片路径的方式保证唯一性。
-2、本地模型受限于本地电脑硬件配置，运算速度慢，且准确率不如云端模型。
-3、只使用了部分月球相关学术论文用作示例，后续可增加其他更多行星相关学术论文。
-4、可继续开发相关Web UI界面，提供更方便的交互体验。
+- **MinerU 解析仍有缺陷**：在遇到图片紧密相连的 PDF 时，可能分割错误，导致图片描述需依赖原始图例 + 路径以保证唯一性。  
+- **本地模型性能受限**：嵌入与视觉模型受本地 GPU（RTX 4070 8GB）制约，速度与精度尚不如云端大型模型。  
+- **数据集范围有限**：目前仅包含部分月球科学论文，后续将扩展到火星、小行星等其他行星领域。  
+- **交互体验待提升**：计划开发 Web UI，提供更友好的图形化问答界面。  
