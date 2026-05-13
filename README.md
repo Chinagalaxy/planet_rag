@@ -36,16 +36,17 @@ Zhang et al. - 2020 - Asymmetric Lunar Magnetic Perturbations Produced by Reflec
 ## 📂 文件架构
 ```
 planet_rag/
-├── PDFs/                 # 原始论文 PDF
 ├── data/                 # 解析后的 Markdown 和图片
+├── images/               # README.md 中使用的展示图片
 ├── models/               # 本地文字嵌入和视觉模型（需自行下载）
-├── rag.py              # 交互式问答主程序
-├── db_init.py           # 数据预处理与多模态嵌入
-├── MinerU_agent.py      #调用MinerU进行PDF解析，自动下载Markdown文件，json结构文件和图片，需要API Key
-├── vision.py             # 本地图片描述生成器，图生文
-├── requirements.txt      # Python 依赖
+├── PDFs/                 # 原始论文 PDF
 ├── .env                  # API Key 等私密配置
-└── README.md             # 项目说明文档
+├── db_init.py            # 数据预处理与多模态嵌入
+├── MinerU_agent.py       #调用 MinerU 进行 PDF 解析，自动下载 Markdown 文件，json 结构文件和图片，需要 API Key
+├── rag.py                # 交互式问答主程序
+├── README.md             # 项目说明文档
+├── requirements.txt      # 系统运行的基本 Python 依赖
+└── vision.py             # 本地图片描述生成器，获得每张图片的图片描述用于后续多模态检索
 ```
 ## 🚀 快速开始
 在准备好数据、模型等基础需求后，运行rag.py文件，即可开始使用系统。（第一次运行可能较慢，与选择的视觉模型和电脑配置有关）
