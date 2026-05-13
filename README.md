@@ -88,7 +88,24 @@ bge-m3嵌入模型加载完成
 解析到的路径: ['E:/ML/RAG/PDFs/Zhang et al. - 2020 - Asymmetric Lunar Magnetic Perturbations Produced by Reflected Solar Wind Particles.pdf', 'E:/ML/RAG/data/Zhang et al. - 2021 - A Meandering Lunar Wake Produced by the Pickup of Reflected Solar‐Wind Ions/images/9964f71e27854845133db442b741db415cfe07652a12fbb3958619391eb4728f.jpg', 'E:/ML/RAG/PDFs/Zhang et al. - 2021 - A Meandering Lunar Wake Produced by the Pickup of Reflected Solar‐Wind Ions.pdf']
 ```
 
+
+**LSE坐标系示意图**
+
+
 ![LSE坐标系示意图](images/9964f71e27854845133db442b741db415cfe07652a12fbb3958619391eb4728f(1).jpg)
+
+
+**引用论文1截图**
+
+
+![paper1](images/4628636547594327529373gsdgrsgersg67536754.png)
+
+
+**引用论文2截图**
+
+
+![paper2](images/5629847947239687206787206ghogosdhgsod.png)
+
 
 ```
 用户: 给我一张月球全球性磁场图
@@ -102,7 +119,13 @@ bge-m3嵌入模型加载完成
 是否打开所有引用文件？(y/n): Y
 解析到的路径: ['E:/ML/RAG/data/Ravat et al. - 2020 - Lunar Magnetic Field Models From Lunar Prospector and SELENEKaguya Along‐Track Magnetic Field Gradients/images/7b141f5f7e67fc81e897cbbc281957f4a40f73ad27f3f356167bce60e5a5c399.jpg']
 ```
+
+**月球全球性磁场图**
+
+
 ![月球全球性磁场图](images/7b141f5f7e67fc81e897cbbc281957f4a40f73ad27f3f356167bce60e5a5c399(1).jpg)
+
+
 
 ## 🧐 不足与展望
 - **MinerU 解析仍有缺陷**：在遇到图片紧密相连的 PDF 时，可能分割错误，导致图片描述需依赖原始图例 + 路径以保证唯一性。  
