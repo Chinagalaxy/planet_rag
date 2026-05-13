@@ -19,20 +19,34 @@
 PDF 文件 → MinerU API 解析 → 自动下载 MD + 图片 → Markdown 分块（基于markdown文件标题+递归分块）→ Qwen3-VL 图片描述（可选） → 嵌入 (bge-m3)→ 存入 Milvus 并构建混合检索器（关键字+向量）
 
 ## 💻 系统基础需求
+
+
 **1、创建.env文件，填写以下内容：**
+
+
 ```
 MINERU_API_KEY = your_mineru_api_key
 DEEPSEEK_API_KEY = your_deepseek_api_key
 DEEPSEEK_BASE_URL = https://api.deepseek.com
 MILVUS_TOKEN = your_milvus_token （第一次创建为默认token）
 ```
-**2、下载本地模型，代码中使用文本嵌入模型bge-m3和视觉模型Qwen3VL-4B-Instruct，可选择其他模型进行替换。将模型下载到本文件夹下的models文件夹中。**
+
+
+**2、下载本地模型，代码中使用文本嵌入模型bge-m3和视觉模型Qwen3-VL-4B-Instruct，可选择其他模型进行替换。将模型下载到本文件夹下的models文件夹中。**
+
+
 **3、准备领域内学术论文PDF数据，保存到当前文件夹下PDFs文件夹内，格式如（可从Zotero直接导出PDF文件）：**
+
+
 ```
 Cai et al. - 2025 - Persistent but weak magnetic field at the Moon’s midstage revealed by Chang’e-5 basalt.pdf
 Zhang et al. - 2020 - Asymmetric Lunar Magnetic Perturbations Produced by Reflected Solar Wind Particles.pdf
 ```
+
+
 **4、根据requirements.txt安装依赖，建议使用conda环境。**
+
+
 ## 📂 文件架构
 ```
 planet_rag/
